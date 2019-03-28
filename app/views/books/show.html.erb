@@ -1,0 +1,21 @@
+	<%= render 'books/list', book: @book %>
+
+<div class="container">
+    <div class="row">
+
+<div class="col-md-8">
+
+<h1>Book detail</h1>
+
+<table class= "table table-striped">
+	<tbody>
+		<tr>
+            <td><%= @book.title %></td>
+			<td><%= @book.body %></td>
+			<td><%= link_to "Edit" ,edit_book_path(@book.id) ,class: "edit_#{@book.id}"%></td>
+			<td><%= link_to "Destroy", book_path(@book.id), method: :delete ,class: "destroy_book_#{@book.id}", "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>

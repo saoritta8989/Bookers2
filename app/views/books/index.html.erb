@@ -1,0 +1,32 @@
+
+	<%= render 'books/list', book: @book %>
+
+
+
+
+<div class="col-md-9">
+
+<h1>Books</h1>
+
+<table class= "table table-striped">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Opinion</th>
+	</tr>
+  </thead>
+
+<% @books.each do |book| %>
+  <tbody>
+		<tr>
+			<td><%=link_to book.title, book_path(book.id), class: "book_#{book.id}" %>  
+           </td>
+			<td><%= book.body %></td>
+
+		</tr>
+	</tbody>
+	<% end %>
+</table>
+</div>
+</div>
+</div>
